@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lynkr - Chat</title>
+  <link rel="stylesheet" href="./styles/style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <img src="./imgs/logo.png" alt="Logo" />
+      <span>Lynkr</span>
+    </div>
+    <div class="nav-toggle" aria-label="Toggle Navigation">☰</div>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/assets/features.html">Features</a></li>
+      <li><a href="/assets/chat.html">Chat</a></li>
+      <li><a href="/assets/about.html">About</a></li>
+      <li><a href="/assets/register.html">Register</a></li>
+      <li><a href="/assets/login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Chat Box -->
+  <div class="chat-box">
+    <div class="chat-messages" id="chatMessages" aria-live="polite"></div>
+    <div class="chat-input">
+      <input type="text" id="chatInput" placeholder="Type your message..." aria-label="Type message" />
+      <button id="sendBtn" aria-label="Send Message">Send</button>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      // Send message when button is clicked
+      $('#sendBtn').click(function () {
+        const message = $('#chatInput').val().trim();
+        if (message !== '') {
+          $('#chatMessages').append(`<div class="chat-message self">${message}</div>`);
+          $('#chatInput').val('');
+          $('#chatMessages').scrollTop($('#chatMessages')[0].scrollHeight);  // Scroll to the bottom
+        }
+      });
+
+      // Send message when "Enter" key is pressed
+      $('#chatInput').keypress(function (e) {
+        if (e.which == 13) {
+          $('#sendBtn').click();
+        }
+      });
+
+      // Toggle navigation menu on mobile
+      $('.nav-toggle').click(function () {
+        $('.nav-links').slideToggle();
+      });
+    });
+  </script>
+</body>
+</html>

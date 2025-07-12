@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register page</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+      <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <img src="./imgs/logo.png" alt="Logo" />
+      <span>Lynkr</span>
+    </div>
+    <div class="nav-toggle">&#9776;</div>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/assets/about.html">About</a></li>
+      <li><a href="/assets/features.html">Features</a></li>
+      <li><a href="/assets/login.html">Login</a></li>
+      <li><a href="/assets/register.html">Register</a></li>
+    </ul>
+  </nav>
+   <!-- 📝 Registration Form -->
+   <section class="form-container">
+    <h2>Create Your Lynkr Account</h2>
+
+    <form id="registerForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      
+      <select id="gender">
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="non-binary">Non-binary</option>
+        <option value="trans">Trans</option>
+      </select>
+      
+      <select id="orientation">
+        <option value="">Looking For</option>
+        <option value="friendship">Friendship</option>
+        <option value="short-term">Short-Term</option>
+        <option value="long-term">Long-Term</option>
+        <option value="marriage">Marriage</option>
+      </select>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <p id="message" class="success-msg"></p>
+  </section>
+     
+      
+      <script src="script.js"></script>
+</body>
+</html>
